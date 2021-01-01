@@ -6,7 +6,8 @@
     <div class="list">
       <ui>
         <li v-for="itme in todoList"
-            :key="itme.key">
+            :key="itme.key"
+            @click="change(itme.key)">
           <van-checkbox v-model=itme.targe
                         icon-size="24px"
                         change="change(itme.key)">
@@ -20,7 +21,6 @@
     </div>
   </div>
 </template>
-import { mapGetters } from 'vuex'
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -34,8 +34,9 @@ export default {
 
   },
   methods: {
-    change: function () {
-
+    change (id) {
+      console.log(id);
+      this.$store.commit("changeTarge", id)
     }
   }
 }

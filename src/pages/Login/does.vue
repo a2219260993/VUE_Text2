@@ -6,10 +6,10 @@
     <div class="list">
       <ui>
         <li v-for="itme in doesList"
-            :key="itme.key">
+            :key="itme.key"
+            @click="change(itme.key)">
           <van-checkbox v-model=itme.targe
-                        icon-size="24px"
-                        @change="change(itme.key)">
+                        icon-size="24px">
             <div class="box"><span class="dataColor"><s>{{itme.data}}</s> </span><span class="right">
                 <van-icon name="calendar-o" />
                 <span class="listTime">{{itme.time}}</span>
@@ -20,7 +20,7 @@
     </div>
   </div>
 </template>
-import { mapGetters } from 'vuex'
+
 <script>
 import { mapGetters } from 'vuex'
 export default {
@@ -32,8 +32,9 @@ export default {
     ...mapGetters(['doesList'])
   },
   methods: {
-    change: function (id) {
+    change (id) {
       console.log(id);
+      this.$store.commit("changeTarge", id)
     }
   }
 }
