@@ -1,5 +1,9 @@
 # 1.2完成夜间版本
 
+![完成](https://ftp.bmp.ovh/imgs/2021/01/8b1284cb04dae3d2.png)
+
+![完成](https://ftp.bmp.ovh/imgs/2021/01/97452040f73cb7e6.png)
+
 首先在login页面登录 利用` this.$router.push('index') `转跳至主页
 
 主页里面就大致将总体样式给设置了一下 然后利用了三个路由占位符 
